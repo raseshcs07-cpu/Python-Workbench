@@ -1,6 +1,6 @@
 Github.txt
 .vscode
-ssh-keygen -t ed25519 -C "YOUR_GITHUB_EMAIL"[D[D[D
-ssh-keygen -t ed25519 -C "YOUR_GITHUB_EMAIL"[D[D[D.pub
+ssh-keygen -t ed25519 -C "raseshcs07@gmail.com"
+ssh-keygen -t ed25519 -C "raseshcs07@gmail.com"
 type $env/raseshcs07-cpu\.ssh\id_ed25519.pub
 type $env/raseshcs07-cpu\.ssh\id_ed25519.pub.pub
