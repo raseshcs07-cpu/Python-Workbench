@@ -25,3 +25,8 @@ txt = "lorem ipsum dolor sit amet"
 print(c.hump(txt))
 #This method capitalizes the first letter of each word.
 
+
+# Remove a Package
+# python3 -m pip uninstall camelcase
+# List Packages
+# python3 -m pip list
