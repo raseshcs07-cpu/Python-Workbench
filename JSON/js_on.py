@@ -83,3 +83,12 @@ print(json.dumps(x, indent=4, separators=(". ", " = ")))
 # sort the result alphabetically by keys:
 print(json.dumps(x, indent=4, sort_keys=True)) 
 
+
+# Import json
+import json
+# Create a JSON string
+x = '{"name": "Emil", "age": 30}'
+# Parse the JSON string
+y = json.loads(x)
+# Print the age
+print(y["age"])
