@@ -20,8 +20,8 @@
 # python3 -m pip install camelcase
 # python3 -m pip show camelcase
 import camelcase
-
 c = camelcase.CamelCase()
-
-txt = "hello world"
+txt = "lorem ipsum dolor sit amet"
 print(c.hump(txt))
+#This method capitalizes the first letter of each word.
+
