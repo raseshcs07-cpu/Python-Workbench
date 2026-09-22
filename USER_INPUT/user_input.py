@@ -32,5 +32,3 @@ while y == True:
     except:
         print("wrong input ,try again!")
 print("Thank You!")
-
-
