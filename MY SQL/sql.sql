@@ -115,3 +115,70 @@ DELETE FROM
 Preview: Docs Removes existing row(s) from a table. If a WHERE statement is excluded, all rows in the table will be deleted.
  deletes rows from a table.
 */
+
+
+
+CREATE TABLE tech(
+  id INTEGER PRIMARY KEY,
+  sessions TEXT,
+  speakers TEXT,
+  topics TEXT,
+  room assignments TEXT,
+);
+
+ALTER TABLE tech
+ADD COLUMN newcolumn TEXT;
+
+UPDATE tech 
+SET newcolumn = '@taylorswift' 
+WHERE id = 5;
+
+DELETE FROM tech
+WHERE newcolumn IS NULL;
+
+
+
+CREATE TABLE sessions(
+  id INTEGER PRIMARY KEY,
+  title TEXT,
+  speaker TEXT,
+  session_date DATE
+);
+
+INSERT INTO sessions(speaker,title session_date)
+  VALUES ('Maya Chen','Intro to Data Visualization', 'May 1 2026');
+
+SELECT * FROM sessions;
+
+INSERT INTO sessions(speaker,title,session_date)
+  VALUES ('Jordan Patal','Building Reliable APIs', 'May 2 2026');
+
+INSERT INTO sessions(speaker,title,session_date)
+  VALUES ('Elena Rivera','Cybersecurity Basics for Teams', 'May 3 2026');
+
+UPDATE sessions
+SET  title = 'Building Reliable REST APIs'
+WHERE speaker = 'Jordan Patal';
+
+SELECT title FROM sessions WHERE speaker = 'Jordan Patel' ;
+
+ALTER TABLE sessions ADD COLUMN room TEXT;
+
+INSERT INTO sessions(
+  name,room )
+  VALUES('Maya Chen - ', 'Room A' );
+
+INSERT INTO sessions(
+  name,room )
+  VALUES('Jordan Patal - ', 'Room B' );
+
+INSERT INTO sessions(
+  name,room )
+  VALUES('Elena Rivera - ', 'Room C' );
+
+
+DELETE FROM sessions
+WHERE speaker = 'Elena Rivera';
+
+
+SELECT * FROM sessions;
