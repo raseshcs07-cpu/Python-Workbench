@@ -148,8 +148,6 @@ CREATE TABLE sessions(
 INSERT INTO sessions(speaker,title session_date)
   VALUES ('Maya Chen','Intro to Data Visualization', 'May 1 2026');
 
-SELECT * FROM sessions;
-
 INSERT INTO sessions(speaker,title,session_date)
   VALUES ('Jordan Patal','Building Reliable APIs', 'May 2 2026');
 
