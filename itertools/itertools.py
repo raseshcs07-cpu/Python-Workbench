@@ -26,3 +26,20 @@ s = int(s)
 
 for i in sorted(permutations(S,s)):
     print(''.join(i))
+
+
+from itertools import combinations
+print( list( combinations('12345',2)))
+
+A = [1,1,3,3,3]
+print( list( combinations(A,4)))
+
+
+from itertools import combinations
+S,s = input().split()
+s = int(s)
+
+S=sorted(S)
+for i in range(1,s+1):
+  for j in combinations(S,i):
+    print(''.join(j))
