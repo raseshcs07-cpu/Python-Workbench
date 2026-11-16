@@ -43,3 +43,16 @@ S=sorted(S)
 for i in range(1,s+1):
   for j in combinations(S,i):
     print(''.join(j))
+
+
+from itertools import combinations_with_replacement
+print ( list( combinations_with_replacement('12345',2)))
+
+
+from itertools import combinations_with_replacement
+S,s = input().split()
+s = int(s)
+
+for i in combinations_with_replacement(sorted(S),s):
+     print(''.join(i))
+     
