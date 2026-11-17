@@ -213,7 +213,7 @@ VALUES
 (199,'London Rooftop Sessions','Violet Harbor','London','VIP',9,213.0),
 (200,'Paris After Hours','Camille Rose','Paris','VIP',1,205.0);
 
-SELECT *FROM concert_sales;
+SELECT * FROM concert_sales;
 
 
 SELECT COUNT(*) FROM concert_sales;
@@ -227,10 +227,8 @@ SELECT MIN(ticket_price) FROM concert_sales;
 SELECT MAX(ticket_price) FROM concert_sales;
 
 
-SELECT AVG(ticket_price) FROM concert_sales;
 SELECT AVG(tickets_sold) FROM concert_sales;
 SELECT AVG(ticket_price) FROM concert_sales;
-SELECT AVG(tickets_sold) FROM concert_sales;
 SELECT SUM(tickets_sold) AS total_tickets_sold, AVG(ticket_price) AS avg_ticket_price FROM concert_sales 
 WHERE ticket_type = 'VIP';
 
@@ -240,3 +238,39 @@ SELECT event_name, ticket_type, ROUND(ticket_price, 0) FROM concert_sales;
 SELECT AVG(ticket_price) FROM concert_sales;
 
 
+-- SELECT year,  AVG(imdb_rating) FROM movies GROUP BY year ORDER BY year;
+SELECT ticket_type, COUNT(*) FROM concert_sales GROUP BY ticket_type;
+SELECT ticket_type = 'VIP' , COUNT(*) FROM concert_sales WHERE ticket_type = 'VIP' ;
+SELECT ticket_type, COUNT(*)  FROM concert_sales WHERE city = 'Tokyo' GROUP BY ticket_type ;
+SELECT city , SUM(tickets_sold) FROM concert_sales  GROUP BY city;
+
+
+
+SELECT ROUND(imdb_rating),COUNT(name) FROM movies GROUP BY ROUND(imdb_rating) ORDER BY ROUND(imdb_rating);
+SELECT ROUND(imdb_rating), COUNT(name) FROM movies GROUP BY 1 ORDER BY 1;
+SELECT  city, ticket_type, SUM(tickets_sold) FROM concert_sales  GROUP BY city, ticket_type; 
+SELECT  city,  ticket_type,  SUM(tickets_sold) FROM concert_sales GROUP BY 1, 2; 
+
+
+
+SELECT year,genre,COUNT(name) FROM movies GROUP BY 1, 2 HAVING COUNT(name) > 10;
+SELECT  
+ticket_type, 
+ ROUND(AVG(ticket_price), 0), 
+ COUNT(*) 
+FROM concert_sales 
+GROUP BY ticket_type
+HAVING COUNT(ticket_type) > 3;
+
+
+/*
+COUNT() : count the number of rows
+SUM() : the sum of the values in a column
+MAX() / MIN() : the largest/smallest value
+AVG() : the average of the values in a column
+ROUND() : round the values in the column
+GROUP BY : Docs Groups a result set based on an aggregate function (COUNT(), MIN(), MAX(), SUM(), AVG()). It lists the number in each group.
+ is a clause used with aggregate functions to combine data from one or more columns.
+HAVING : Docs Loading link description
+ limits the results of a query based on an aggregate property.
+*/
