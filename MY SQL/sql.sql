@@ -145,7 +145,7 @@ CREATE TABLE sessions(
   session_date DATE
 );
 
-INSERT INTO sessions(speaker,title session_date)
+INSERT INTO sessions(speaker,title , session_date)
   VALUES ('Maya Chen','Intro to Data Visualization', 'May 1 2026');
 
 INSERT INTO sessions(speaker,title,session_date)
