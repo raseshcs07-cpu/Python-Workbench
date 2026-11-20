@@ -182,3 +182,24 @@ WHERE subscriptions.price_per_month < 15
 GROUP BY subscriptions.description;
 
 
+SELECT *
+FROM newspaper
+UNION
+SELECT *
+FROM online;
+
+
+WITH checkpoint_one_query AS (
+    SELECT
+        customer_id,
+        COUNT(subscription_id) AS subscriptions
+    FROM orders
+    GROUP BY customer_id
+)
+
+SELECT
+    customers.customer_name,
+    checkpoint_one_query.subscriptions
+FROM customers
+JOIN checkpoint_one_query
+    ON customers.customer_id = checkpoint_one_query.customer_id;
