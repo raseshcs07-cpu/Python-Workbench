@@ -72,3 +72,34 @@ for price, size in customers:
         shoes[size] -= 1  # Stock mein se 1 joota kam kar dein
 
 print(total_earned)
+
+
+from collections import defaultdict
+
+d = defaultdict(list)
+d['python'].append("awesome")
+d['something-else'].append("not relevant")
+d['python'].append("language")
+
+for i in d.items():
+    print (i)
+
+
+
+
+from collections import defaultdict
+
+n,m = map(int,input().split())
+d = defaultdict(list)
+
+for i in range(n):
+    word = input()
+    d[word].append(i+1)
+    
+for i in range(m):
+    word = input()
+    
+    if word in d:
+        print(*d[word])
+    else:
+        print(-1)
