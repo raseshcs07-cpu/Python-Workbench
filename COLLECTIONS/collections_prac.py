@@ -50,6 +50,7 @@ print(a)
 
 
 
+
 from collections import Counter
 
 x = int(input())
