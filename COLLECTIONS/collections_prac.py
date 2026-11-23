@@ -103,3 +103,4 @@ for i in range(m):
         print(*d[word])
     else:
         print(-1)
+        
