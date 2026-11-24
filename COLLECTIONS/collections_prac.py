@@ -103,4 +103,88 @@ for i in range(m):
         print(*d[word])
     else:
         print(-1)
-        
+
+
+from collections import namedtuple
+
+Car = namedtuple('Car','Price Mileage Colour Class')
+xyz = Car(Price = 100000, Mileage = 30, Colour = 'Cyan', Class = 'Y')
+print (xyz)
+
+Car(Price=100000, Mileage=30, Colour='Cyan', Class='Y')
+print (xyz.Class)
+
+
+
+from collections import namedtuple
+
+Point = namedtuple('Point','x,y')
+pt1 = Point(1,2)
+pt2 = Point(3,4)
+dot_product = ( pt1.x * pt2.x ) +( pt1.y * pt2.y )
+print (dot_product)
+
+
+
+
+from collections import namedtuple
+
+n = int(input())
+
+Student = namedtuple('Student', input())
+
+total = 0
+
+for i in range(n):
+    data = input().split()
+    s = Student(*data)
+    total += int(s.MARKS)
+
+print(f"{total / n:.2f}")
+
+
+
+from collections import OrderedDict
+
+ordinary_dictionary = {}
+ordinary_dictionary['a'] = 1
+ordinary_dictionary['b'] = 2
+ordinary_dictionary['c'] = 3
+ordinary_dictionary['d'] = 4
+ordinary_dictionary['e'] = 5
+print(ordinary_dictionary)
+
+
+from collections import OrderedDict
+
+ordered_dictionary = OrderedDict()
+ordered_dictionary['a'] = 1
+ordered_dictionary['b'] = 2
+ordered_dictionary['c'] = 3
+ordered_dictionary['d'] = 4
+ordered_dictionary['e'] = 5
+print(ordinary_dictionary)
+
+
+
+
+from collections import OrderedDict
+
+n = int(input())
+
+items = OrderedDict()
+
+for i in range(n):
+    data = input().split()
+    
+    name = " ".join(data[:-1])
+    price = int(data[-1])
+
+    if name in items:
+        items[name] += price
+    else:
+        items[name] = price
+
+for name, price in items.items():
+    print(name, price)
+
