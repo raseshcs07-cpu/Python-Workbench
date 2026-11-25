@@ -188,3 +188,4 @@ for i in range(n):
 for name, price in items.items():
     print(name, price)
 
+
