@@ -189,3 +189,87 @@ for name, price in items.items():
     print(name, price)
 
 
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+
+n = int(input())
+words = OrderedDict()
+
+for i in range(n):
+    word = input()
+
+    if word in words:
+        words[word] += 1
+    else:
+        words[word] = 1
+
+print(len(words))
+print(*words.values())
+
+
+
+from collections import deque
+
+d = deque()
+d.append(1)
+print(d)
+
+d.appendleft(2)
+print(d)
+
+d.clear()
+print(d)
+
+d.extend('1')
+print(d)
+
+d.extendleft('234')
+print(d)
+
+d.count('1')
+print(d)
+
+d.pop()
+print(d)
+
+d.popleft()
+print(d)
+
+d.extend('7896')
+print(d)
+
+d.remove('2')
+print(d)
+
+d.reverse()
+print(d)
+
+d.rotate(3)
+print(d)
+
+
+
+
+from collections import deque
+
+d = deque()
+
+n = int(input())
+
+for i in range(n):
+    command = input().split()
+
+    if command[0] == "append":
+        d.append(int(command[1]))
+
+    elif command[0] == "appendleft":
+        d.appendleft(int(command[1]))
+
+    elif command[0] == "pop":
+        d.pop()
+
+    elif command[0] == "popleft":
+        d.popleft()
+
+print(*d)
