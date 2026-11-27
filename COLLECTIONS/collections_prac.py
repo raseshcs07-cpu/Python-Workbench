@@ -273,3 +273,34 @@ for i in range(n):
         d.popleft()
 
 print(*d)
+
+
+
+
+from collections import deque
+
+t = int(input())
+
+for i in range(t):
+    n = int(input())
+    cubes = deque(map(int, input().split()))
+
+    last = float('inf')
+    possible = True
+
+    while cubes:
+        if cubes[0] >= cubes[-1]:
+            current = cubes.popleft()
+        else:
+            current = cubes.pop()
+
+        if current > last:
+            possible = False
+            break
+
+        last = current
+
+    if possible:
+        print("Yes")
+    else:
+        print("No")
